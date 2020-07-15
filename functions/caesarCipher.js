@@ -9,4 +9,15 @@ const caesarCipher = (plaintext, key) => {
   return ciphertext;
 };
 
-export default { caesarCipher };
+const range = (start) => {
+  const result = [];
+  const stop = 'z';
+  const stop2 = stop.charCodeAt(0);
+
+  for (let idx = start.charCodeAt(0); idx <= stop2; idx += 1) {
+    result.push(String.fromCharCode(idx));
+  }
+  return result.join('');
+};
+
+export default { caesarCipher, range };
