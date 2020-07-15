@@ -3,7 +3,9 @@ const caesarCipher = (plaintext, key) => {
   const re = /[a-z]/;
   for (let i = 0; i < plaintext.length; i += 1) {
     if (re.test(plaintext.charAt(i))) {
-      ciphertext += String.fromCharCode((plaintext.charCodeAt(i) - 97 + key) % 26 + 97);
+      const temp = (plaintext.charCodeAt(i) - 97 + key) % 26;
+      const string = String.fromCharCode(temp + 97);
+      ciphertext += string;
     } else { ciphertext += plaintext.charAt(i); }
   }
   return ciphertext;
